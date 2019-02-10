@@ -6,8 +6,7 @@ import { ApolloLink } from "apollo-link";
 import { onError } from "apollo-link-error";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { ApolloProvider } from "react-apollo";
-import { Router, Route,  } from "react-router";
-
+import { BrowserRouter, Route} from  'react-router-dom';
  import App from "./components/App";
 
 const client = new ApolloClient({
@@ -33,9 +32,9 @@ const client = new ApolloClient({
 
 const Root = () => (
     <ApolloProvider client = {client}>
-        <Router history={browserhash}>
+        <BrowserRouter>
             <Route path ="/" component={App} />
-        </Router>
+        </BrowserRouter>
     </ApolloProvider>
 );
 
