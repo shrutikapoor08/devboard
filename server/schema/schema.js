@@ -1,8 +1,12 @@
 const {buildSchema} = require('graphql');
 
 module.exports = buildSchema(`
+
+    type AuthData {
+        token: String!
+    }
     type RootQuery {
-        hello: String
+        twitter: String
     }
     
     schema {
